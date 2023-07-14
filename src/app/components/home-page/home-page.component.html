@@ -1,0 +1,23 @@
+<div class="quiz-container">
+    <h1 class="quiz-header">QUIZ MAKER </h1>
+    <div class="quiz-main">
+        <form [formGroup]="createQuizForm">
+            <select class="category" id="categorySelect" placeholder="Select category" formControlName="category">
+                <option value="Select category">Select category</option>
+                <option *ngFor="let category of categoryList?.trivia_categories; let i=index" [value]="category?.id">
+                    {{category?.name}}</option>
+            </select>
+            <select class="difficulty" id="difficultySelect" placeholder="Select difficulty"
+                formControlName="difficultyLevel">
+                <option *ngFor="let difficultyLevel of difficultyLevels" [value]="difficultyLevel?.difficultyName">
+                    {{difficultyLevel.name}}</option>
+            </select>
+            <button class="create-btn" id="createBtn" (click)="getQuestions()">Create</button>
+        </form>
+        <div *ngIf="questionList?.hasOwnProperty('results')" class="question-list">
+            <app-questions [results]="questionList.results"></app-questions>
+        </div>
+        
+    </div>
+
+</div>

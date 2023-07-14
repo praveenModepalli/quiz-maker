@@ -1,0 +1,40 @@
+.questions {
+    margin: 15px;
+}
+
+.option-container {
+    display: block;
+    margin: 15px;
+}
+
+.option {
+    padding: 6px;
+    border-radius: 5px;
+    color: green;
+    border: solid 1px green;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: green;
+    color: white !important;
+}
+
+.submit {
+    padding: 12px;
+    width: 600px;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-container {
+    margin-top: 55px;
+    margin-left: 15px;
+}
+.noData{
+    margin-left: 164px;
+    font-size: 17px;
+}

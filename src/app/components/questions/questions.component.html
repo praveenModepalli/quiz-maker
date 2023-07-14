@@ -1,0 +1,18 @@
+<ng-container *ngIf="results.length > 0; else noData">
+    <div *ngFor="let question of results; let i=index;">
+        <div class="questions">
+            <label>{{question.question}}</label>
+        </div>
+        <div class="option-container">
+            <button appHighlight *ngFor="let option of question?.incorrect_answers; let answerIndex=index"
+                [ngClass]="{'selected': question?.indexAnswer === answerIndex}"
+                (click)="selectOption(i,option,answerIndex)" class="option">{{option}} </button>
+        </div>
+    </div>
+    <div class="submit-container">
+        <button (click)="submit()" class="submit" *ngIf="displaySubmitButton"> Submit</button>
+    </div>
+</ng-container>
+<ng-template #noData>
+    <span class="noData">Data not available.</span>
+</ng-template>
