@@ -23,8 +23,7 @@
 
 .difficulty {
     width: 20%;
-    @include alignEle;
-    ;
+    @include alignEle; 
 }
 
 .create-btn {
